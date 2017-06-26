@@ -1,0 +1,24 @@
+<section>
+	<h1>Ejemplares de API Laravel</h1>	
+	<a ui-sref="crearEjemplar" class="btn btn-primary">Crear Nuevo Recurso</a>
+	<table class="table table-bordered table-hover" style="width: 80%; margin-left: 10%;">
+		<thead>
+			<tr>
+				<th>Nombre</th>
+				<th>Director</th>
+				<th>Acción</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="ejemplar in vm.ejemplares">
+				<td>{{ ejemplar.titulo }}</td>
+				<td>{{ ejemplar.autor }}</td>
+				<td>
+					<a ui-sref="verEjemplar({id: ejemplar.id_ejemplar})">ver</a>
+					<!-- <a ui-srefwwwwwwwwwwwwwww="">actualizar</a>
+					<a ui-sref="">eliminar</a> -->
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</section>

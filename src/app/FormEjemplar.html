@@ -1,0 +1,30 @@
+<form ng-submit="vm.semanticAction(vm.ejemplarForm)">
+	<legend ng-if="vm.location === 'store'">Crear Prestamo</legend>
+	<div class="form-group">
+		<label>Fecha Prestamo</label>
+		<input ng-model="vm.ejemplarForm.fechaPrestamo" type="date" class="form-control">
+	</div>
+	<div class="form-group">
+		<label>Fecha Devolucion</label>
+		<input ng-model="vm.ejemplarForm.fechaDevolucion" type="date" class="form-control">
+	</div>
+	<div class="form-group">
+		<label>Libro</label>
+		<select ng-model="vm.ejemplarForm.libroID" class="form-control" ng-options="libro as libro.titulo for libro in vm.libros">
+	</div>
+	<div class="form-group" ng-if="vm.location === 'store'">
+		<label>Fecha Estreno</label>
+		<input ng-model="vm.ejemplarForm.anno_estreno" type="date" class="form-control">
+	</div>
+	<div class="form-group">
+		<label>Fecha Estreno</label>
+		<input ng-model="vm.ejemplarForm.anno_estreno" type="text" class="form-control" placeholder="Fecha Estreno">
+	</div>
+	<div class="form-group">
+		<label>Genero</label>
+		<select ng-model="vm.ejemplarForm.id_genero" class="form-control" ng-options="genero as genero.descripcion for genero in vm.generos"></select>
+	</div>
+	<a ui-sref="ejemplar" class="btn btn-default">Volver</a>
+	<button ng-if="vm.location === 'store'" type="submit" class="btn btn-success">Guardar</button>
+	<button ng-if="vm.location === 'update'" type="submit" class="btn btn-danger">Actualizar</button>
+</form>
